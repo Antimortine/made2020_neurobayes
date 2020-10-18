@@ -20,8 +20,9 @@ class Logger:
 
         time = gmtime()
         hash = ''.join([chr(random.randint(97, 122)) for _ in range(3)])
-        fname = '-'.join(sys.argv[0].split('/')[-3:])
-        self.path = '%s/%s-%s-%s-%s' % (base, fname, name, hash, strftime('%m-%d-%H:%M', time))
+        # fname = '-'.join(sys.argv[0].split('/')[-3:])
+        # self.path = '%s/%s-%s-%s-%s' % (base, fname, name, hash, strftime('%m-%d-%H:%M', time))
+        self.path = '%s/%s-%s-%s' % (base, name, hash, strftime('%m-%d-%H-%M', time))
 
         self.logs = self.path + '.csv'
         self.output = self.path + '.out'
